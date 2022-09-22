@@ -1,0 +1,16 @@
+<header class="relative z-20">
+  <nav class="flex items-center justify-between content text-white pt-10 mb-28">
+    <div>
+      <h1 class="text-xl font-bold">
+        <a href="{% url 'home' %}">
+          carloscdev
+        </a>
+      </h1>
+    </div>
+    <ul class="flex items-center gap-5">
+      <li><a class="hover:animate-pulse hover:underline" href="{% url 'home' %}">Inicio</a></li>
+      <li><a class="hover:animate-pulse hover:underline" href="{% url 'contact' %}">Contactos</a></li>
+      <li><a class="hover:animate-pulse hover:underline" href="{% url 'todo' %}">Tareas</a></li>
+    </ul>
+  </nav>
+</header>
