@@ -1,0 +1,39 @@
+{% extends 'layout/main.html' %}
+
+{% block 'title' %} Tarea {% endblock %}
+
+{% block 'name' %}TAREA{% endblock  %}
+{% block 'action' %}
+<a href="{% url 'todo' %}" class="h-10 w-10 text-center flex items-center justify-center bg-indigo-500 hover:bg-indigo-400 text-white rounded" title="Regresar a la lista de tareas">
+  <i class="fa-solid fa-list"></i>
+</a>
+{% endblock  %}
+{% block 'description' %}Creado el: {{ todo.created }}{% endblock  %}
+{% block 'content' %}
+  <ul class="px-5 grid gap-5">
+    <li class="flex gap-3 flex-col sm:flex-row sm:items-center justify-between">
+      <strong>Título:</strong>
+      <span>{{ todo.title }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row sm:items-center justify-between">
+      <strong>Estado:</strong>
+      {% if todo.finished %}
+        <span class="bg-green-500 text-white inline-block rounded px-3">Finalizado</span>
+      {% else %}
+        <span class="bg-yellow-500 text-white inline-block rounded px-3">Pendiente</span>
+      {% endif %}
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row sm:items-center justify-between">
+      <strong>Fecha Estimada:</strong>
+      <span>{{ todo.estimated_end }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row sm:items-center justify-between">
+      <strong>Prioridad:</strong>
+      <span>{{ todo.priority }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row sm:items-center justify-between">
+      <strong>Descripción:</strong>
+      <span>{{ todo.description }}</span>
+    </li>
+  </ul>
+{% endblock  %}

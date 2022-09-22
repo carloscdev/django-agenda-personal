@@ -1,0 +1,48 @@
+{% extends 'layout/main.html' %}
+
+{% block 'title' %} Contacto {% endblock %}
+
+{% block 'name' %}
+{% if contact.is_favorite %}
+<i class="fa-solid fa-star text-yellow-500 text-sm"></i>
+{% endif %}
+CONTACTO
+{% endblock  %}
+{% block 'action' %}
+<a href="{% url 'contact' %}" class="h-10 w-10 text-center flex items-center justify-center bg-indigo-500 hover:bg-indigo-400 text-white rounded" title="Regresar a la lista de contactos">
+  <i class="fa-solid fa-list"></i>
+</a>
+{% endblock  %}
+{% block 'description' %}Creado el: {{ contact.created }}{% endblock  %}
+{% block 'content' %}
+  <ul class="px-5 grid md:grid-cols-2 gap-x-10 gap-y-5">
+    <li class="flex gap-3 flex-col sm:flex-row truncate sm:items-center justify-between">
+      <strong>Nombre:</strong>
+      <span>{{ contact.name }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row truncate sm:items-center justify-between">
+      <strong>Apellido:</strong>
+      <span>{{ contact.last_name }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row truncate sm:items-center justify-between">
+      <strong>Móvil:</strong>
+      <span>{{ contact.mobile }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row truncate sm:items-center justify-between">
+      <strong>Teléfono:</strong>
+      <span>{{ contact.phone }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row truncate sm:items-center justify-between">
+      <strong>Email:</strong>
+      <span>{{ contact.email }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row truncate sm:items-center justify-between">
+      <strong>Compañia:</strong>
+      <span>{{ contact.company }}</span>
+    </li>
+    <li class="flex gap-3 flex-col sm:flex-row truncate sm:items-center justify-between">
+      <strong>Nota:</strong>
+      <span>{{ contact.notes }}</span>
+    </li>
+  </ul>
+{% endblock  %}

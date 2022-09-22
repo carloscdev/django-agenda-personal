@@ -1,0 +1,22 @@
+{% extends 'layout/main.html' %}
+
+{% block 'title' %} Inicio {% endblock %}
+
+{% block 'name' %}BIENVENIDO{% endblock  %}
+{% block 'description' %}Elige una opción para continuar{% endblock  %}
+{% block 'content' %}
+  <ul class="flex flex-col">
+    <li>
+      <a class="flex hover:bg-indigo-50 rounded gap-3 items-center p-5 cursor-pointer" href="{% url 'contact' %}">
+        <i class="fa-solid fa-chevron-right"></i>
+        Contactos
+      </a>
+    </li>
+    <li>
+      <a class="flex hover:bg-indigo-50 rounded gap-3 items-center p-5 cursor-pointer" href="{% url 'todo' %}">
+        <i class="fa-solid fa-chevron-right"></i>
+        Tareas
+      </a>
+    </li>
+  </ul>
+{% endblock  %}

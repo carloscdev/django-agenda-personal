@@ -1,0 +1,32 @@
+{% extends 'layout/main.html' %}
+
+{% block 'title' %} Nuevo Contacto {% endblock %}
+
+{% block 'name' %}NUEVO CONTACTO{% endblock  %}
+{% block 'action' %}
+<a href="{% url 'contact' %}" class="h-10 w-10 text-center flex items-center justify-center bg-indigo-500 hover:bg-indigo-400 text-white rounded" title="Regresar a la lista de contactos">
+  <i class="fa-solid fa-list"></i>
+</a>
+{% endblock  %}
+{% block 'description' %}Complete los datos para continuar{% endblock  %}
+{% block 'content' %}
+  <form class="px-5 grid md:grid-cols-2 gap-5" action="{% url 'contact_create' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit" value="GUARDAR" class="md:col-span-2 h-10 w-full text-center flex items-center justify-center bg-indigo-500 hover:bg-indigo-400 text-white rounded">
+  </form>
+{% endblock  %}
+{% block 'message' %}
+  {% if messages %}
+  <div class="relative z-20 content mt-5 rounded-xl bg-white p-8 shadow-xl">
+    <ul class="flex flex-col gap-5">
+    {% for message in messages %}
+      <li class="flex items-center gap-3">
+        <i class="fa-solid fa-circle-info text-green-500"></i>
+        <span class="opacity-70">{{ message }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endblock  %}

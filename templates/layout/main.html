@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+  {% block 'styles' %}{% endblock  %}
+  <title>{% block 'title' %}{% endblock %} | @carloscdev</title>
+</head>
+<body>
+  {% include 'components/menu.html' %}
+  <main class="relative z-20 content rounded-xl bg-white p-8 shadow-xl min-h-[400px]">
+    <div class="w-full text-neutral-700">
+      <div class="flex items-center justify-between">
+        <h1 class="text-3xl font-bold text-indigo-500 flex items-center gap-1">
+          {% block 'name' %}{% endblock  %}
+        </h1>
+        {% block 'action' %}{% endblock  %}
+      </div>
+      <p class="opacity-70 mb-10">
+        <small>
+          {% block 'description' %}{% endblock  %}
+        </small>
+      </p>
+      {% block 'content' %}{% endblock %}
+    </div>
+  </main>
+  {% block 'message' %}{% endblock  %}
+  {% include 'components/footer.html' %}
+  {% block 'scripts' %}{% endblock  %}
+</body>
+</html>
