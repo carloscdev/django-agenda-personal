@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://agenda.carlosc.dev','https://localhost:8000']
+
 
 # Application definition
 
