@@ -12,3 +12,4 @@ sqlparse==0.4.2
 toml==0.10.2
 toposort==1.7
 tzdata==2022.1
+whitenoise==6.2.0
