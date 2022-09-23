@@ -15,13 +15,13 @@ body {
 body::after {
   content: '';
   position: absolute;
-  top: -50vh;
+  top: -800px;
   left: -30rem;
   width: 200vw;
   min-width: 100rem;
   background: linear-gradient(to right, #818CF8, #4338ca);
-  height: 100vh;
-  transform: rotate(-15deg);
+  height: 1000px;
+  transform: rotate(-10deg);
   z-index: 0;
 }
 
