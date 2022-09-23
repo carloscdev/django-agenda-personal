@@ -51,14 +51,21 @@ def create(request):
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        contacts = Contact.objects.all()
+        if len(contacts) >= 10:
+            context = {
+                'form': form
+            }
+            messages.error(request, 'Existen demasiados contactos registrados')
+            messages.error(request, 'Elimine algunos contactos para continuar')
+            messages.error(request, 'Máximo de contactos permitidos: 10')
+            return render(request, 'views/contact/create.html', context)
+
         if form.is_valid():
             form.save()
-        context = {
-            'form': form
-        }
         return redirect('contact')
 
-def delete(request, id):
+def delete(_, id):
     contact = Contact.objects.get(id=id)
     contact.delete()
 

@@ -22,7 +22,7 @@
     <ul class="flex flex-col gap-5">
     {% for message in messages %}
       <li class="flex items-center gap-3">
-        <i class="fa-solid fa-circle-info text-green-500"></i>
+        <i class="fa-solid fa-circle-info {% if message.tags == 'error' %} text-red-500 {% else %} text-green-500 {% endif %} "></i>
         <span class="opacity-70">{{ message }}</span>
       </li>
     {% endfor %}

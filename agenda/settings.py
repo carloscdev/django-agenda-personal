@@ -26,9 +26,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://agenda.carlosc.dev', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://agenda.carlosc.dev','https://localhost:8000']
+CSRF_TRUSTED_ORIGINS = ['https://agenda.carlosc.dev']
 
 
 # Application definition
