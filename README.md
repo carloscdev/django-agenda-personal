@@ -18,7 +18,7 @@ $ git clone https://github.com/carloscdev/django-agenda-personal/
 * __Create a virtual enviroment__
 
 ```bash
-py -m venv venv
+python3 -m venv venv
 ```
 
 * __Initialize the venv (Windows)__
@@ -28,12 +28,17 @@ py -m venv venv
 
 * __Install the dependencies__
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 * __Run project__
 ```bash
-py mangage.py runserver
+docker-compose up -d
+```
+
+__or with python locally but you need to have PostgreSQL installed and expose the env variables from docker-compose.yaml:17-22 file__
+```bash
+python3 mangage.py runserver localhost:3000
 ```
 
 <hr />
